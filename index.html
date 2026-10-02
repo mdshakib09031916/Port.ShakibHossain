@@ -1,5 +1,12 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Mohammad Shakib Hossain - Marketing Operations Manager. Content planning, team leading, SMM, media buying, graphic design and video editing.">
+<meta name="theme-color" content="#0A100E">
 <title>Mohammad Shakib Hossain</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect x='1' y='1' width='42' height='42' rx='12' fill='%23E4B85E'/%3E%3Cpath d='M10 11v22M34 11v22M10 22h3.5M30.5 22H34' stroke='%230A100E' stroke-width='3.4' stroke-linecap='round' fill='none'/%3E%3Cpath d='M28.5 13.2c-2-1.7-5.6-2.3-8.4-.9-3.3 1.6-3.5 5.6-.4 7.2l4.8 2.4c3.2 1.6 3 5.8-.5 7.4-2.9 1.3-6.6.6-8.6-1.4' stroke='%230A100E' stroke-width='3.4' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='34' cy='11' r='2.6' fill='%230A100E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
@@ -214,7 +221,136 @@ footer a:hover{color:var(--gold)}
   .js .bar i{transform:scaleX(var(--w,1))!important}
   html{scroll-behavior:auto}
 }
+/* logo */
+.mark{gap:12px}
+.logo{width:40px;height:40px;flex:none;filter:drop-shadow(0 6px 18px rgba(228,184,94,.35));transition:transform .6s var(--ease)}
+.mark:hover .logo{transform:rotate(-8deg) scale(1.06)}
+.lg-s{stroke-dasharray:60;stroke-dashoffset:0}
+.js .lg-s{stroke-dashoffset:60;transition:stroke-dashoffset 1.4s var(--ease) .3s}
+.js.loaded .lg-s{stroke-dashoffset:0}
+.wordmark{display:flex;flex-direction:column;line-height:1;font-size:19px}
+.wordmark i{font-style:normal;color:var(--gold)}
+.wordmark small{font-family:var(--mono);font-size:10px;font-weight:400;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.mark .wordmark{display:block;color:var(--fg)}
+.wordmark small{display:block}
+
+/* showcase slider */
+.slider{position:relative;border-radius:26px;border:1px solid var(--line2);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));overflow:hidden;touch-action:pan-y}
+.slides{display:flex;transition:transform .9s var(--ease);will-change:transform}
+.slide{flex:0 0 100%;display:grid;grid-template-columns:.9fr 1.25fr;gap:44px;padding:48px;align-items:center;min-width:0}
+.slide>*{min-width:0}
+.slide .label{color:var(--gold)}
+.slide h3{font-size:clamp(28px,3.6vw,42px);font-weight:800;letter-spacing:-.03em;margin:14px 0 14px}
+.slide p{color:var(--muted);font-size:16px;max-width:34ch}
+.slide .tags{margin-top:22px}
+.slide .txt>*{transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.slide:not(.active) .txt>*{opacity:0;transform:translateY(16px)}
+.slide.active .txt>:nth-child(2){transition-delay:.08s}
+.slide.active .txt>:nth-child(3){transition-delay:.16s}
+.slide.active .txt>:nth-child(4){transition-delay:.24s}
+.vis{position:relative;aspect-ratio:16/11;max-width:100%;border-radius:18px;background:var(--bg2);border:1px solid var(--line);overflow:hidden;padding:18px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.vbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.vbar b{color:var(--fg);font-weight:500}
+.ctrl{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:22px;flex-wrap:wrap}
+.sdots{display:flex;gap:8px;flex-wrap:wrap}
+.sdot{position:relative;width:46px;height:4px;border-radius:4px;background:var(--line2);border:0;padding:0;cursor:pointer;overflow:hidden}
+.sdot i{position:absolute;inset:0;background:var(--gold);transform-origin:0 50%;transform:scaleX(0)}
+.sdot.done i{transform:scaleX(1)}
+.sdot.active i{animation:fillbar var(--dur,5.5s) linear forwards}
+.slider:hover~.ctrl .sdot.active i,.ctrl.paused .sdot.active i{animation-play-state:paused}
+@keyframes fillbar{to{transform:scaleX(1)}}
+.arrows{display:flex;gap:10px}
+.arw{width:48px;height:48px;border-radius:50%;border:1px solid var(--line2);background:transparent;color:var(--fg);display:grid;place-items:center;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.arw:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.arw svg{width:18px;height:18px}
+.counter{font-family:var(--mono);font-size:13px;color:var(--muted);min-width:60px}
+.counter b{color:var(--fg);font-weight:500}
+
+/* v1 calendar */
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.cal span{font-family:var(--mono);font-size:9.5px;color:var(--muted);text-align:center;padding-bottom:2px}
+.cal div{aspect-ratio:1/.78;border-radius:8px;background:rgba(255,255,255,.035);border:1px solid var(--line);padding:5px;display:flex;flex-direction:column;gap:3px;font-family:var(--mono);font-size:9px;color:var(--muted)}
+.cal div em{display:block;height:5px;border-radius:3px;font-style:normal;transform-origin:0 50%;transition:transform .6s var(--ease)}
+.slide:not(.active) .cal div em{transform:scaleX(0)}
+.cal .p{background:var(--gold)} .cal .v{background:var(--mint)} .cal .a{background:#C98BDB}
+.legend{display:flex;gap:14px;margin-top:12px;font-size:11px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+/* v2 feed */
+.feedwrap{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;height:calc(100% - 30px)}
+.phone{width:min(190px,40vw);aspect-ratio:9/17;border-radius:24px;border:2px solid var(--line2);background:#070B0A;padding:12px 9px;display:flex;flex-direction:column;gap:8px}
+.phead{display:flex;align-items:center;gap:7px}
+.phead i{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--mint))}
+.phead b{display:block;width:60px;height:6px;border-radius:3px;background:var(--line2)}
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.grid9 i{aspect-ratio:1;border-radius:3px;transition:transform .5s var(--ease),opacity .5s}
+.slide:not(.active) .grid9 i{transform:scale(.6);opacity:0}
+.post{border-radius:16px;border:1px solid var(--line2);background:var(--card);padding:16px;display:flex;flex-direction:column;gap:12px}
+.post .art{aspect-ratio:4/3;border-radius:10px;background:radial-gradient(circle at 30% 30%,#F3D594,transparent 45%),radial-gradient(circle at 75% 70%,#7FD1AE,transparent 50%),linear-gradient(135deg,#1F5C47,#6B4B16);position:relative;overflow:hidden}
+.post .art::after{content:"NEW";position:absolute;left:12px;bottom:12px;font-family:var(--display);font-weight:800;font-size:26px;color:#0A100E;letter-spacing:-.02em}
+.post .meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.post .meta b{display:block;height:7px;width:55%;border-radius:4px;background:var(--line2)}
+
+/* v3 timeline */
+.screen{height:48%;border-radius:10px;background:linear-gradient(120deg,#16463A,#0F1815 40%,#6B4B16);display:grid;place-items:center;position:relative;overflow:hidden}
+.screen .play{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center;backdrop-filter:blur(4px)}
+.screen .play::after{content:"";border-left:13px solid var(--fg);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.screen .tc{position:absolute;right:10px;bottom:8px;font-family:var(--mono);font-size:10px;color:var(--fg)}
+.tracks{position:relative;margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.trk{display:flex;gap:4px;height:22px;align-items:stretch}
+.trk em{font-style:normal;font-family:var(--mono);font-size:9px;color:var(--muted);width:20px;display:flex;align-items:center}
+.trk i{border-radius:5px}
+.trk .c1{background:rgba(228,184,94,.75)} .trk .c2{background:rgba(127,209,174,.7)} .trk .c3{background:rgba(201,139,219,.6)}
+.wave{display:flex;align-items:center;gap:2px;flex:1;background:rgba(127,209,174,.1);border-radius:5px;padding:0 4px;overflow:hidden}
+.wave b{flex:1;background:var(--mint);border-radius:2px;opacity:.7}
+.playhead{position:absolute;top:-4px;bottom:-4px;left:24px;width:2px;background:var(--fg);box-shadow:0 0 10px var(--fg)}
+.slide.active .playhead{animation:ph 5.5s linear infinite}
+@keyframes ph{to{left:calc(100% - 2px)}}
+
+/* v4 campaign */
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.kpi{border:1px solid var(--line);border-radius:10px;padding:9px 10px;font-size:11px;color:var(--muted)}
+.kpi b{display:block;height:8px;border-radius:4px;margin-top:7px;background:linear-gradient(90deg,var(--mint),var(--gold));transform-origin:0 50%;transition:transform 1s var(--ease) .2s}
+.slide:not(.active) .kpi b{transform:scaleX(.1)}
+.chart{position:relative;height:calc(100% - 118px);min-height:80px;display:flex;align-items:flex-end;gap:5px;padding-top:10px;border-bottom:1px solid var(--line2);background:repeating-linear-gradient(0deg,transparent 0 24px,var(--line) 24px 25px)}
+.chart i{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--gold),rgba(228,184,94,.25));transform-origin:50% 100%;transition:transform .9s var(--ease)}
+.slide:not(.active) .chart i{transform:scaleY(.05)}
+.chart i:last-child{background:linear-gradient(180deg,var(--mint),rgba(127,209,174,.3));box-shadow:0 0 20px rgba(127,209,174,.4)}
+
+/* v5 kanban */
+.kb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;height:calc(100% - 30px)}
+.col{background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.col>span{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tk{border-radius:7px;background:var(--card);border:1px solid var(--line2);padding:7px;display:flex;flex-direction:column;gap:5px;transition:transform .6s var(--ease),opacity .6s}
+.slide:not(.active) .tk{transform:translateY(10px);opacity:0}
+.tk b{display:block;height:5px;border-radius:3px;background:var(--line2)}
+.tk b:first-child{width:80%} .tk b:nth-child(2){width:55%}
+.tk u{display:flex;justify-content:space-between;align-items:center;text-decoration:none}
+.tk u i{width:14px;height:14px;border-radius:50%}
+.tk u em{font-style:normal;font-family:var(--mono);font-size:8.5px;padding:1px 5px;border-radius:999px}
+.tk.hot{border-color:rgba(228,184,94,.6);box-shadow:0 0 0 3px rgba(228,184,94,.08)}
+
+@media (max-width:960px){
+  .slide{grid-template-columns:1fr;gap:28px;padding:28px}
+  .slide p{max-width:none}
+}
+@media (max-width:520px){
+  .slide{padding:20px}
+  .vis{aspect-ratio:auto;min-height:300px;padding:14px}
+  .feedwrap{grid-template-columns:1fr;justify-items:center}
+  .feedwrap .post{display:none}
+  .kb{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cal{gap:4px}
+  .cal div{padding:3px;border-radius:6px}
+  .chart{height:170px}
+  .kb{height:auto}
+  .kb .col:nth-child(n+3){display:none}
+  .wordmark small{display:none}
+}
 </style>
+<style>body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
 
 <div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="grain" aria-hidden="true"></div>
@@ -222,10 +358,20 @@ footer a:hover{color:var(--gold)}
 
 <nav id="nav">
   <div class="navin">
-    <a class="mark" href="#top"><b>S</b><em style="font-style:normal">Shakib<span>.</span></em></a>
+    <a class="mark" href="#top" aria-label="Shakib Hossain, home">
+      <svg class="logo" viewBox="0 0 44 44" aria-hidden="true">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3D594"/><stop offset=".55" stop-color="#E4B85E"/><stop offset="1" stop-color="#B8862E"/></linearGradient></defs>
+        <rect x="1" y="1" width="42" height="42" rx="12" fill="url(#lg)"/>
+        <path class="lg-h" d="M10 11v22M34 11v22M10 22h3.5M30.5 22H34" stroke="#0A100E" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+        <path class="lg-s" d="M28.5 13.2c-2-1.7-5.6-2.3-8.4-.9-3.3 1.6-3.5 5.6-.4 7.2l4.8 2.4c3.2 1.6 3 5.8-.5 7.4-2.9 1.3-6.6.6-8.6-1.4" stroke="#0A100E" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+        <circle cx="34" cy="11" r="2.6" fill="#0A100E"/>
+      </svg>
+      <span class="wordmark">Shakib<i>.</i><small>Hossain</small></span>
+    </a>
     <div class="navlinks">
       <a href="#process">Process</a>
       <a href="#work">Work</a>
+      <a href="#showcase">Showcase</a>
       <a href="#path">Path</a>
       <a href="#skills">Skills</a>
       <a class="hire" href="#contact">Contact</a>
@@ -319,6 +465,86 @@ footer a:hover{color:var(--gold)}
       </article>
     </div>
     <p class="more rv">Plus many smaller and larger projects across design, video, and social media.</p>
+  </section>
+
+  <section id="showcase">
+    <div class="sec-head">
+      <div class="rv"><div class="label eyebrow">Showcase</div><h2>Inside the <span class="serif">work</span></h2></div>
+      <p class="rv" style="--d:.1s">A look at what I handle every week, from the content calendar to the live campaign.</p>
+    </div>
+    <div class="rv">
+      <div class="slider" id="slider" aria-roledescription="carousel" aria-label="What I do">
+        <div class="slides" id="slides">
+
+          <div class="slide" role="group" aria-label="1 of 5">
+            <div class="txt"><span class="label">Content planning</span><h3>The monthly content calendar</h3><p>Every month starts with a plan: what we post, in which format, and on which day, matched to the brand’s goals.</p><div class="tags"><span>Strategy</span><span>Scheduling</span><span>Formats</span></div></div>
+            <div class="vis" aria-hidden="true">
+              <div class="vbar"><b>Content calendar</b><span>Month view</span></div>
+              <div class="cal" id="cal"></div>
+              <div class="legend"><span><i style="background:var(--gold)"></i>Post</span><span><i style="background:var(--mint)"></i>Video</span><span><i style="background:#C98BDB"></i>Ad</span></div>
+            </div>
+          </div>
+
+          <div class="slide" role="group" aria-label="2 of 5">
+            <div class="txt"><span class="label">Graphic design</span><h3>Social posts that stop the scroll</h3><p>Brand-consistent designs for feeds, stories, and ads. I started as a designer, so I brief and review with a designer’s eye.</p><div class="tags"><span>Posts</span><span>Stories</span><span>Ad creatives</span></div></div>
+            <div class="vis" aria-hidden="true">
+              <div class="vbar"><b>Brand feed</b><span>Design review</span></div>
+              <div class="feedwrap">
+                <div class="phone"><div class="phead"><i></i><b></b></div><div class="grid9" id="grid9"></div></div>
+                <div class="post"><div class="art"></div><div class="meta"><b></b><span class="chip done">Approved</span></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide" role="group" aria-label="3 of 5">
+            <div class="txt"><span class="label">Video editing</span><h3>Reels and video ads</h3><p>Short videos cut for social: hooks in the first seconds, captions, music, and versions for every placement.</p><div class="tags"><span>Reels</span><span>Video ads</span><span>Editing</span></div></div>
+            <div class="vis" aria-hidden="true">
+              <div class="vbar"><b>Edit timeline</b><span>Reel · 9:16</span></div>
+              <div class="screen"><div class="play"></div><span class="tc">00:00:15</span></div>
+              <div class="tracks">
+                <div class="trk"><em>V2</em><i class="c3" style="flex:1.2"></i><i style="flex:2"></i><i class="c3" style="flex:1"></i><i style="flex:2"></i></div>
+                <div class="trk"><em>V1</em><i class="c1" style="flex:2"></i><i class="c1" style="flex:1.4"></i><i class="c2" style="flex:2.2"></i><i class="c1" style="flex:1.6"></i></div>
+                <div class="trk"><em>A1</em><div class="wave" id="wave"></div></div>
+                <div class="playhead"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide" role="group" aria-label="4 of 5">
+            <div class="txt"><span class="label">Media buying</span><h3>Paid campaigns, tuned daily</h3><p>I set up the audiences, budgets, and creatives, then watch the results and shift spend to what works.</p><div class="tags"><span>Meta Ads</span><span>Targeting</span><span>Optimization</span></div></div>
+            <div class="vis" aria-hidden="true">
+              <div class="vbar"><b>Campaign overview</b><span class="chip live">Active</span></div>
+              <div class="kpis"><div class="kpi">Reach<b style="width:85%"></b></div><div class="kpi">Clicks<b style="width:65%"></b></div><div class="kpi">Leads<b style="width:50%"></b></div></div>
+              <div class="chart" id="chart"></div>
+            </div>
+          </div>
+
+          <div class="slide" role="group" aria-label="5 of 5">
+            <div class="txt"><span class="label">Team leading</span><h3>One board, one team</h3><p>Designers, editors, and SEO all work from clear briefs. I track every piece from brief to published.</p><div class="tags"><span>Briefs</span><span>Review</span><span>Deadlines</span></div></div>
+            <div class="vis" aria-hidden="true">
+              <div class="vbar"><b>Team board</b><span>This week</span></div>
+              <div class="kb">
+                <div class="col"><span>Brief</span><div class="tk"><b></b><b></b><u><i style="background:var(--gold)"></i><em style="background:rgba(228,184,94,.15);color:var(--gold)">Post</em></u></div><div class="tk"><b></b><b></b><u><i style="background:#C98BDB"></i><em style="background:rgba(201,139,219,.15);color:#C98BDB">Ad</em></u></div></div>
+                <div class="col"><span>In progress</span><div class="tk hot"><b></b><b></b><u><i style="background:var(--mint)"></i><em style="background:rgba(127,209,174,.15);color:var(--mint)">Video</em></u></div><div class="tk"><b></b><b></b><u><i style="background:var(--gold)"></i><em style="background:rgba(228,184,94,.15);color:var(--gold)">Post</em></u></div><div class="tk"><b></b><b></b><u><i style="background:var(--muted)"></i><em style="background:rgba(255,255,255,.06);color:var(--muted)">SEO</em></u></div></div>
+                <div class="col"><span>Review</span><div class="tk"><b></b><b></b><u><i style="background:var(--mint)"></i><em style="background:rgba(127,209,174,.15);color:var(--mint)">Video</em></u></div></div>
+                <div class="col"><span>Published</span><div class="tk"><b></b><b></b><u><i style="background:var(--gold)"></i><em style="background:rgba(228,184,94,.15);color:var(--gold)">Post</em></u></div><div class="tk"><b></b><b></b><u><i style="background:var(--gold)"></i><em style="background:rgba(228,184,94,.15);color:var(--gold)">Post</em></u></div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="ctrl" id="ctrl">
+        <div class="sdots" id="sdots" role="tablist" aria-label="Choose slide"></div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <span class="counter" id="counter"><b>01</b> / 05</span>
+          <div class="arrows">
+            <button class="arw" id="prev" type="button" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+            <button class="arw" id="next" type="button" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="path">
@@ -426,6 +652,53 @@ footer a:hover{color:var(--gold)}
     });
   }
 
+  // showcase visuals
+  (function(){
+    var cal=document.getElementById('cal'), h='';
+    ['M','T','W','T','F','S','S'].forEach(function(d){ h+='<span>'+d+'</span>'; });
+    var plan={1:'p',2:'v',3:'p',5:'a',7:'p',8:'v',10:'p',12:'pv',14:'a',15:'p',17:'v',19:'p',21:'pa',22:'v',24:'p',26:'v',28:'p'};
+    for(var i=1;i<=28;i++){ var c=plan[i]||''; h+='<div>'+i+c.split('').map(function(k,j){ return '<em class="'+k+'" style="transition-delay:'+(i*0.025+j*0.05)+'s"></em>'; }).join('')+'</div>'; }
+    cal.innerHTML=h;
+    var g=document.getElementById('grid9'), cols=['linear-gradient(135deg,#E4B85E,#6B4B16)','linear-gradient(135deg,#7FD1AE,#16463A)','#1F5C47','linear-gradient(135deg,#C98BDB,#3A2F17)','#E4B85E','linear-gradient(135deg,#16463A,#7FD1AE)','#6B4B16','linear-gradient(135deg,#F3D594,#1F5C47)','#7FD1AE'], gh='';
+    cols.forEach(function(c,i){ gh+='<i style="background:'+c+';transition-delay:'+(i*0.06)+'s"></i>'; }); g.innerHTML=gh;
+    var w=document.getElementById('wave'), wh=''; for(var k=0;k<48;k++){ wh+='<b style="height:'+(25+Math.abs(Math.sin(k*0.7)*55+Math.sin(k*2.3)*15))+'%"></b>'; } w.innerHTML=wh;
+    var ch=document.getElementById('chart'), hs=[28,34,30,42,40,52,48,60,58,70,74,88], chh='';
+    hs.forEach(function(v,i){ chh+='<i style="height:'+v+'%;transition-delay:'+(i*0.05)+'s"></i>'; }); ch.innerHTML=chh;
+  })();
+
+  // slider
+  (function(){
+    var track=document.getElementById('slides'), slides=[].slice.call(track.children), n=slides.length;
+    var dotsWrap=document.getElementById('sdots'), ctrl=document.getElementById('ctrl'), counter=document.getElementById('counter'), slider=document.getElementById('slider');
+    var DUR=5500, idx=0, timer=null, start=0, remain=DUR, paused=false;
+    var dots=slides.map(function(_,i){ var b=document.createElement('button'); b.className='sdot'; b.type='button'; b.setAttribute('role','tab'); b.setAttribute('aria-label','Slide '+(i+1)); b.innerHTML='<i></i>'; b.addEventListener('click',function(){ go(i,true); }); dotsWrap.appendChild(b); return b; });
+    ctrl.style.setProperty('--dur',DUR+'ms');
+    function pad(x){ return (x<10?'0':'')+x; }
+    function go(i,user){
+      idx=(i+n)%n;
+      track.style.transform='translateX('+(-100*idx)+'%)';
+      slides.forEach(function(s,j){ s.classList.toggle('active',j===idx); s.setAttribute('aria-hidden',j!==idx); });
+      dots.forEach(function(d,j){ d.classList.remove('active'); d.classList.toggle('done',j<idx); d.setAttribute('aria-selected',j===idx); });
+      void dots[idx].offsetWidth; dots[idx].classList.add('active');
+      counter.innerHTML='<b>'+pad(idx+1)+'</b> / '+pad(n);
+      remain=DUR; schedule();
+    }
+    function schedule(){ clearTimeout(timer); if(paused||reduce) return; start=Date.now(); timer=setTimeout(function(){ go(idx+1); },remain); }
+    function pause(){ if(paused) return; paused=true; ctrl.classList.add('paused'); clearTimeout(timer); remain-=Date.now()-start; }
+    function resume(){ if(!paused) return; paused=false; ctrl.classList.remove('paused'); schedule(); }
+    document.getElementById('prev').addEventListener('click',function(){ go(idx-1,true); });
+    document.getElementById('next').addEventListener('click',function(){ go(idx+1,true); });
+    slider.addEventListener('mouseenter',pause); slider.addEventListener('mouseleave',resume);
+    slider.addEventListener('keydown',function(e){ if(e.key==='ArrowRight') go(idx+1,true); if(e.key==='ArrowLeft') go(idx-1,true); });
+    slider.tabIndex=0;
+    var sx=null, sy=null;
+    slider.addEventListener('touchstart',function(e){ sx=e.touches[0].clientX; sy=e.touches[0].clientY; pause(); },{passive:true});
+    slider.addEventListener('touchend',function(e){ if(sx===null) return; var dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy; if(Math.abs(dx)>40 && Math.abs(dx)>Math.abs(dy)) go(idx+(dx<0?1:-1),true); sx=null; paused=false; ctrl.classList.remove('paused'); schedule(); },{passive:true});
+    document.addEventListener('visibilitychange',function(){ if(document.hidden) pause(); else resume(); });
+    if(reduce) ctrl.style.setProperty('--dur','0s');
+    go(0);
+  })();
+
   // copy buttons
   document.querySelectorAll('.copy').forEach(function(btn){
     btn.addEventListener('click',function(){
@@ -437,5 +710,5 @@ footer a:hover{color:var(--gold)}
   });
 })();
 </script>
-
-</body></html>
+</body>
+</html>
